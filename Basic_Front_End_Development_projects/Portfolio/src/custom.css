@@ -1,6 +1,23 @@
-a .nav-link .active {
-  background-color: red;
+
+.album {
+  min-height: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #f7f7f7;
 }
-body > nav > div > div:nth-child(2) > ul > li:nth-child(1) > a {
-  background-color: red;
+
+.card {
+  float: left;
+  width: 33.333%;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  border: 0;
+}
+
+.card > img {
+  margin-bottom: .75rem;
+}
+
+.card-text {
+  font-size: 85%;
 }
