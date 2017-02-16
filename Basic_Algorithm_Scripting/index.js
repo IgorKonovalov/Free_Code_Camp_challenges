@@ -143,3 +143,26 @@ function getIndexToIns(arr, num) {
 // Write a function which takes a ROT13 encoded string as input and returns a decoded string.
 //
 // All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.
+
+function rot13(str) { // LBH QVQ VG!
+  let arrStr = str.split('');
+  let arrCode = [];
+  let newStr = '';
+  arrStr.forEach((char) => {
+    arrCode.push(char.charCodeAt(0));
+  });
+  let encodedChars = arrCode.map((char) => {
+    if ((char >= 78)&&(char <= 90)) {
+      return char -= 13;
+    } else if ((char >= 65)&&(char < 78)) {
+      return char = 90 - (12 - (char - 65))
+    } else return char;
+  });
+  encodedChars.forEach((char) => {
+    newStr += String.fromCharCode(char);
+  })
+  return newStr;
+}
+
+// Change the inputs below to test
+console.log(rot13("LBH QVQ VG"));
