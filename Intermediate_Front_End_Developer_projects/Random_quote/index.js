@@ -10,6 +10,7 @@ const myInit = { method: 'GET',
                mode: 'cors',
                cache: 'default' }
 
+
 fetch('https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous', myInit)
   .then(response => response.json())
   .then(data => console.log(data))
