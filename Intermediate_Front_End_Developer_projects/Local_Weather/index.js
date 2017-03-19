@@ -9,8 +9,12 @@ const myInit = { method: 'GET',
                mode: 'cors',
                cache: 'default' }
 
-fetch('https://simple-weather.p.mashape.com/weatherdata?lat=59.934280&lng=30.335099', myInit)
- .then(response => response.json())
- .then(data => {
-   console.log(data)
- })
+const URL = 'https://simple-weather.p.mashape.com/weatherdata?'
+
+navigator.geolocation.getCurrentPosition((position) => {
+  fetch(`${URL}lat=${position.coords.latitude}&lng=${position.coords.longitude}`, myInit)
+   .then(response => response.json())
+   .then(data => {
+     console.log(data)
+   })
+})
