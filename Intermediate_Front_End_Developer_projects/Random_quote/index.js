@@ -32,7 +32,7 @@ getQuote = () => {
         'href',
         `${TWITTER_URL}${encodeURIComponent(data.quote)}&${TWITTER_HASHTAG}${data.author}`
       )
-      const color = randomInteger(0, 255)
+      const color = randomInteger(0, 360)
       container.setAttribute('style', `background-color: hsl(${color}, 50%, 50%)`)
       tweet.setAttribute('style', `background-color: hsl(${color}, 50%, 50%)`)
       loadQuoteButton.setAttribute('style', `background-color: hsl(${color}, 50%, 50%)`)
