@@ -29,11 +29,14 @@ navigator.geolocation.getCurrentPosition((position) => {
     myInit)
       .then(response => response.json())
       .then(data => {
-        countryText.innerHTML = data.query.results.channel.location.country
-        cityText.innerHTML = data.query.results.channel.location.city
-        const iconCode = data.query.results.channel.item.condition.code
-        weatherIcon.setAttribute('class', `wi wi-${ICONS[iconCode]}`)
-        temperatureText.innerHTML = `${data.query.results.channel.item.condition.temp}℃`
-        console.log(data)
+        weatherResolver(data)
       })
 })
+
+weatherResolver = data => {
+  countryText.innerHTML = data.query.results.channel.location.country
+  cityText.innerHTML = data.query.results.channel.location.city
+  const iconCode = data.query.results.channel.item.condition.code
+  weatherIcon.setAttribute('class', `wi wi-${ICONS[iconCode]}`)
+  temperatureText.innerHTML = `${data.query.results.channel.item.condition.temp}℃`
+}
