@@ -41,5 +41,6 @@ i#weatherIcon {
 }
 
 #temperature {
+  cursor: pointer;
   font-size: 100px;
 }
